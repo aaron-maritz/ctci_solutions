@@ -14,12 +14,31 @@ def URLify(str, length) :
     str = "%20".join(lst)
     return str
 
+def URLify2(str, length) :
+    spaces = 0
+    for char in range (length) :
+        if str[char] == ' ' :
+            spaces += 1
+    total = spaces * 2 + length
+    str[total] = '\0'
+    total = total - 1
+    for i in reversed(range(0, length)) :
+        if str[i] == ' ' :
+            str[total] = '0'
+            str[total - 1] = '2'
+            str[total - 2] = '%'
+            total = total - 3
+        else :
+            str[total] = str[i]
+            total = total - 1
+    print (str)
+
 if __name__ == '__main__' :
     print("Testing URLify")
-    print("a man does : ", URLify("a man does", 10))
-    print("none : ", URLify("none", 4))
-    print(" : ", URLify("", 0))
-    print("excess       me", URLify("excess       me", 15))
+    URLify2( ['a',' ','m','a','n',' ','d','o','e','s',' ',' ',' ',' ',' '], 10 )
+    URLify2( ['n','o','n','e',' '], 4 )
+    URLify2( [' '], 0 )
+    URLify2( ['e','x','c','e','s','s',' ',' ','m','e',' ',' ',' ',' ',' '], 10 )
 
 
 # Algorithm to do this in place -> given we had a character array
