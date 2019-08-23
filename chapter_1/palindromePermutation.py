@@ -1,4 +1,5 @@
-# Aaron Maritz
+# Aaron Maritz, Question 4
+
 # Given a string, write a function to check if it is a permutation of a palindrome
 # Thoughts -> palindrome is same forwards and backwards
 # Only real thing to check -> if the count of a letter is even -> good
