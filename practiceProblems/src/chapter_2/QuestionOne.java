@@ -18,6 +18,7 @@ public class QuestionOne {
 		System.out.println(list.next.data);
 	}
 	
+	//  Testing
 	//  Get O(N^2) here, where N is the # of nodes -> Runs through each node, and each node has to check every other remaining node in the list
 	//  Reference Semantics are being annoying, you know how the algorithm works it's fine
 	public static Node removeDups(Node head) {
